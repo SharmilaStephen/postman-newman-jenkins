@@ -1,0 +1,22 @@
+{
+  "name": "postman-newman-jenkins",
+  "version": "1.0.0",
+  "description": "Project for storing postman tests",
+  "scripts": {
+    "api_tests_production": "newman run tests/Jsonplaceholder.com.postman_colection.json"
+  },
+  "author": "sharmila",
+  "dependencies": {
+    "newman": "^3.9.3"
+  },
+  "main": "index.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/SharmilaStephen/postman-newman-jenkins.git"
+  },
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/SharmilaStephen/postman-newman-jenkins/issues"
+  },
+  "homepage": "https://github.com/SharmilaStephen/postman-newman-jenkins#readme"
+}

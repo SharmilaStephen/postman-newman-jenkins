@@ -1,0 +1,68 @@
+{
+	"info": {
+		"name": "Google URL Shortener",
+		"_postman_id": "34509067-a543-1fcd-8440-476dd4ad5a15",
+		"description": "",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Google URL shortner authentication",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "6f4626b7-301c-4f80-8280-e17fca793704",
+						"type": "text/javascript",
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {",
+							"    pm.response.to.have.status(200);",
+							"});",
+							"",
+							"pm.test(\"Long URL string validation\", function () {",
+							"    var jsonData = pm.response.json();",
+							"    pm.expect(jsonData.longUrl).to.eql(\"http://www.google.com/\");",
+							"});"
+						]
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\"longUrl\": \"http://www.google.com/\"}"
+				},
+				"url": {
+					"raw": "https://www.googleapis.com/urlshortener/v1/url?key=AIzaSyBKxpi9giic-Cy52G5G8WAJMzZsLmucSMc",
+					"protocol": "https",
+					"host": [
+						"www",
+						"googleapis",
+						"com"
+					],
+					"path": [
+						"urlshortener",
+						"v1",
+						"url"
+					],
+					"query": [
+						{
+							"key": "key",
+							"value": "AIzaSyBKxpi9giic-Cy52G5G8WAJMzZsLmucSMc",
+							"equals": true
+						}
+					]
+				},
+				"description": ""
+			},
+			"response": []
+		}
+	]
+}
